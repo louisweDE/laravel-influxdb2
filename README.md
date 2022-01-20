@@ -4,17 +4,6 @@
 
 ### 1. Install via composer
 
-```
-"repositories": [
-    {
-        "url": "https://github.com/louisweDE/laravel-influxdb2.git",
-        "type": "git"
-    }
-],
-```
-
-add the github repo to your repository list inside `composer.json`
-
 ```composer require louiswe/laravel-influxdb```
 
 ### 2. Configuration

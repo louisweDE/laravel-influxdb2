@@ -1,0 +1,32 @@
+{
+  "name": "louiswe/laravel-influxdb",
+  "description": "InfluxDB service provider for laravel",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "louiswe"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "louiswe\\InfluxDB\\": "src/"
+    }
+  },
+  "require": {
+    "php": "^7|^8",
+    "illuminate/support": "^5.0|^6.0|^7.0|^8.0",
+    "influxdata/influxdb-client-php": "^2.4.0"
+  },
+  "minimum-stability": "dev",
+  "extra": {
+    "laravel": {
+      "providers": [
+        "louiswe\\InfluxDB\\Providers\\ServiceProvider"
+      ],
+      "aliases": {
+        "InfluxDB": "louiswe\\InfluxDB\\Providers\\InfluxDB"
+      }
+    }
+  }
+}

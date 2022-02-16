@@ -69,7 +69,7 @@ InfluxDB::writePoint($point);
 InfluxDB::write('login', $tags, $fields);
 ```
 
-Furthermore, you can the methods of the library [influxdb-client-php](https://github.com/influxdata/influxdb-client-php)
+Furthermore, you can access the methods of the library [influxdb-client-php](https://github.com/influxdata/influxdb-client-php)
 directly, for example:
 
 ```php

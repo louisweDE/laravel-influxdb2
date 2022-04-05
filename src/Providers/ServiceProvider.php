@@ -36,10 +36,10 @@ class ServiceProvider extends LaravelServiceProvider implements DeferrableProvid
         $this->app->singleton(Client::class,
             function ($app) {
                 $url = config('influxdb.ssl') ? 'https' : 'http';
-                $url .= '://' . config('influxdb.host') . ':';
+                $url .= '://' . config('influxdb.host') . ':' . config('influxdb.port');
 
                 $config = [
-                    'url'         => $url . config('influxdb.port'),
+                    'url'         => $url,
                     'token'       => config('influxdb.token'),
                     'timeout'     => config('influxdb.timeout'),
                     'bucket'      => config('influxdb.bucket'),
@@ -53,7 +53,6 @@ class ServiceProvider extends LaravelServiceProvider implements DeferrableProvid
                 if (config('influxdb.udp')) {
                     $config['udpHost'] = config('influxdb.udpHost');
                     $config['udpPort'] = config('influxdb.udpPort');
-                    $config['url'] = $url . config('influxdb.udpPort');
                     $config['udp'] = true;
                 }
 

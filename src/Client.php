@@ -38,14 +38,15 @@ class Client extends InfluxClient
                        $this->options['org']);
     }
 
-    /**
-     * @throws Throwable
-     */
     private function writeUdp(string|array|Point $data): void
     {
-        $writer = $this->createUdpWriter();
-        $writer->write($data);
-        $writer->close();
+        try {
+            $writer = $this->createUdpWriter();
+            $writer->write($data);
+            $writer->close();
+        } catch (Throwable $throwable) {
+            error_log($throwable);
+        }
     }
 
     /**

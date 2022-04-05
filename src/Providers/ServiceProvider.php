@@ -53,7 +53,7 @@ class ServiceProvider extends LaravelServiceProvider implements DeferrableProvid
                 if (config('influxdb.udp')) {
                     $config['udpHost'] = config('influxdb.udpHost');
                     $config['udpPort'] = config('influxdb.udpPort');
-                    $config['url'] .= $url . config('influxdb.udpHost');
+                    $config['url'] = $url . config('influxdb.udpHost');
                     $config['udp'] = true;
                 }
 
